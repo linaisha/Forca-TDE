@@ -37,6 +37,7 @@ Elisa de Oliveira Martins, Maycon Ruani Nubesniak e João Henrique Ferreira Krü
 
 # importando o pickle
 import pickle
+import random
 
 # codigo a seguir foi utilizado para a criação dos arquivos
 facil = ["bola","para","casa","fera","mira","goma","faca"]
@@ -61,10 +62,12 @@ facil = pickle.load(arq1)
 medio = pickle.load(arq2)
 dificil = pickle.load(arq3)
 
+aleatorio = random.randint(0,6)
 # printei pra ver se funcionava, continuar apos isso
-print(facil[2])
-print(medio[5])
-print(dificil[3])
+print(facil[aleatorio])
+palavra = facil[aleatorio]
+print(medio[aleatorio])
+print(dificil[aleatorio])
 
 
 #################################################### antes disso é pickle ##############################################
