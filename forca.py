@@ -91,34 +91,22 @@ while op == 1:
     adivinhando = ""
     # começamos de fato o codigo
     while adivinhando != palavra or chances <= 0:
-
         # usuario digita uma letra
         letra = str(input("Digite uma letra: "))
-
         # não queremos que o usuario digite mais de uma letra
         if len(letra) > 1:
             print("Apenas UMA letra, seu vacilao!")
-            continue
+            #continue
         # incluir a letra digitada na lista
         digitadas.append(letra)
-
         # variavel da palavra que a pessoa esta adibinhando
         adivinhando = ""
-
         # aqui colocamos que se a pessoa acertar alguma letra, a mesma vai aparecer, senão ela mantem um _ no lugar
         for letrasegredo in palavra:
             if letrasegredo in digitadas:
                 adivinhando += letrasegredo
             else:
                 adivinhando += "_"
-
-        # caso a pessoa conclua ela termina o jogo, caso não, a palavra aparece para ela ver o que falta
-        if adivinhando == palavra:
-            print("Boa! Você conseguiu! A palavra secreta era: ", palavra)
-            break
-        else:
-            print("Palavra em andamento: ", adivinhando)
-
         # se errar a letra as chances diminuem em um
         if letra not in palavra:
             chances -= 1
@@ -127,15 +115,20 @@ while op == 1:
         # se as chances acabarem o jogo acaba com derrota
         if chances <= 0:
             print("Vish, perdeu meu amigo! Foi enforcado!")
-            break
-
+            #break
         # dizemos quantas chances ainda restam
+        # caso a pessoa conclua ela termina o jogo, caso não, a palavra aparece para ela ver o que falta
+        if adivinhando != palavra:
+            print("Palavra em andamento: ", adivinhando)
+        else:
+            print("Boa! Você conseguiu! A palavra secreta era: ", palavra)
+            #break
         print("Você possui ", chances, " chances, continue tentando!")
-
-# ele recomeça errado ja dando a vitoria, ver isso ai
+    break
+    
+print('Parabens você ganhou')
 # colocar o arquivo com pickle
 # colocar dificuldades
-# colocar aleatoriedade nas palavras (ver sugestao no arquivo tentativa pickle)
 # colocar opção de recomeçar (da forma correta) e de sair do jogo
 # ja fui documentando com os comentarios pra facilitar
 # colocar o turle (desenho criado esta no arquivo auxiliar.py)
