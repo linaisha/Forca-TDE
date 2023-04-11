@@ -34,6 +34,41 @@ Neste caso, considere desenhar um corpo em formato palito, como o desenho abaixo
 Alunos:
 Elisa de Oliveira Martins, Maycon Ruani Nubesniak e João Henrique Ferreira Krüger
 """
+
+# importando o pickle
+import pickle
+
+# codigo a seguir foi utilizado para a criação dos arquivos
+facil = ["bola","para","casa","fera","mira","goma","faca"]
+medio = ["idade","igreja","sextou","saudade","serpente","nostalgia","algoritimos"]
+dificil = ["paralelepipedo","desenvolvimento","otorrinolaringologista","desproporcionadamente","contrarrevolucionario","newtoniano","onomatopeia"]
+
+arq1 = open("facil.pkl","wb")
+arq2 = open("medio.pkl","wb")
+arq3 = open("dificil.pkl","wb")
+
+pickle.dump(facil, arq1)
+pickle.dump(medio, arq2)
+pickle.dump(dificil, arq3)
+
+# aqui encerra a criação dos arquivos e começa a parte de importá-los
+arq1 = open("facil.pkl","rb")
+arq2 = open("medio.pkl","rb")
+arq3 = open("dificil.pkl","rb")
+
+# todos tem ate 7 palavras, entao sortear numero de 0 a 6 para imprimir uma palavra do nivel
+facil = pickle.load(arq1)
+medio = pickle.load(arq2)
+dificil = pickle.load(arq3)
+
+# printei pra ver se funcionava, continuar apos isso
+print(facil[2])
+print(medio[5])
+print(dificil[3])
+
+
+#################################################### antes disso é pickle ##############################################
+
 # palavra exemplo so pra testar o codigo
 palavra = "coelho"
 
@@ -101,3 +136,4 @@ while op == 1:
 # colocar opção de recomeçar (da forma correta) e de sair do jogo
 # ja fui documentando com os comentarios pra facilitar
 # colocar o turle (desenho criado esta no arquivo auxiliar.py)
+
