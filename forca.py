@@ -64,9 +64,9 @@ while op == 1:
         adivinhando.append('-')
         P += 1
 
-    chances = 0
+    chances = 6
 
-    while chances < 6:
+    while chances > 0:
         letra = str(input('Digite uma letra:'))
         
         P = 0
@@ -80,7 +80,7 @@ while op == 1:
 
         if Flag == 0:
             print(f'A letra {letra} não existe nessa palavra')
-            chances += 1
+            chances -= 1
 
         if adivinhando == oculta:
             print('Você ganhou')
@@ -92,6 +92,6 @@ while op == 1:
     if chances == 6:
         print('Vocẽ perdeu todas as suas vidas')
 
-    op = int(input('Você deseja continuar jogando? \n\n1 - para continuar \n2 - para parar'))
+    op = int(input('Você deseja continuar jogando? \n\n1 - para continuar \n2 - para parar \n'))
 
 print('Obrigado por jogar')
